@@ -34,7 +34,8 @@ public class StudentService {
         if(student.isPresent()){
             Student student1 = student.get();
             System.out.println(student1.getSchoolId());
-            School school =  restTemplate.getForObject("http://localhost:8082/school/"+student1.getSchoolId(),School.class);
+            School school =  restTemplate.getForObject("http://school-service/school/"+student1.getSchoolId(),School.class);
+            System.out.println(school.getSchoolName());
             StudentResponse studentResponse = new StudentResponse(
                     student.get().getId(),
                     student.get().getName(),

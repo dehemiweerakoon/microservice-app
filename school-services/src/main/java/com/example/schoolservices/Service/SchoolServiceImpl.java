@@ -25,6 +25,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public School fetchSchoolById(Integer id) {
+        System.out.println(schoolRepository.findById(id));
         return schoolRepository.findById(id).orElse(null);
     }
 }

@@ -15,7 +15,7 @@ import lombok.Setter;
 @Table(name="school")
 public class School {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue()
     private int id;
     private String schoolName;
     private String location;

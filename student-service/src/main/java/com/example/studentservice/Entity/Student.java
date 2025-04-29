@@ -9,8 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @Document(collection = "students")
 public class Student {
     @Id
@@ -18,6 +16,19 @@ public class Student {
     private String name;
     private  int age;
     private String gender;
+
+    public Student() {
+        //this.id = id;
+    }
+
+    public Student(String id, String name, int age, String gender, Integer schoolId) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.schoolId = schoolId;
+    }
+
     private Integer schoolId;
 
     public String getId() {
